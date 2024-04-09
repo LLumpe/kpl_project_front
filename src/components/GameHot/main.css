@@ -1,0 +1,13 @@
+.GameHot{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 9rem;    
+    height: 100px;
+    margin-right: .5rem;
+    padding: 0px;
+    border-radius: .5rem;
+    color: var(--title-color);
+    background-color: var(--white-color); /* 设置背景颜色及透明度 */
+}

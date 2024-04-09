@@ -1,0 +1,5 @@
+.table{
+    padding-bottom: .2rem;
+    border-radius: .5rem;
+    background-color: var(--white-color); /* 设置背景颜色及透明度 */
+}
