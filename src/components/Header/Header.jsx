@@ -1,6 +1,7 @@
 import "./main.css";
 import React, { useEffect, useState } from "react";
 import ThemeButton from "../ThemeButton/ThemeButton";
+import Time from "../Time/Time";
 export default function Header() {
   const [dom, setDom] = useState(null);
   useEffect(() => {
@@ -21,26 +22,31 @@ export default function Header() {
       {/*<!--==================== HEADER ====================-->*/}
       <header className="header" id="header">
         <nav className="nav nav__container">
-        
-          <a href="#" className="nav__logo">
-          <i class="ri-flashlight-fill"></i>
-            王者荣耀KPL数据可视化大屏
-          </a>
-          <div className="nav__menu">
-            <ul className="nav__list">
-              <li className="nav__item">
-                <a href="/" className="nav__link">
-                  <i class="ri-home-line"></i>
-                  <span>Home</span>
-                </a>
-              </li>
-
-            </ul>
+          <div className="nav_content_1">
+            <Time/>
           </div>
+          <div className="nav_content_2">
+            <a href="#" className="nav__logo">
+              <i class="ri-flashlight-fill"></i>
+              王者荣耀KPL数据可视化大屏
+            </a>
+          </div>
+          <div className="nav_content_3">
+            <div className="nav__menu">
+              <ul className="nav__list">
+                <li className="nav__item">
+                  <a href="/" className="nav__link">
+                    <i class="ri-home-line"></i>
+                    <span>Home</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-          <div className="nav__actions">
-            {/* theme button */}
-            <ThemeButton></ThemeButton>
+            <div className="nav__actions">
+              {/* theme button */}
+              <ThemeButton></ThemeButton>
+            </div>
           </div>
         </nav>
       </header>

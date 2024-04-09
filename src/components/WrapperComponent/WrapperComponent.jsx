@@ -1,12 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import "./main.css";
 import * as echarts from "echarts";
-export default function WrapperComponent({
-  option,
-  width,
-  height,
-  title,
-}) {
+export default function WrapperComponent({ option, width, height, title }) {
   const main = useRef(null);
   useEffect(() => {
     const chartDom = main.current;
@@ -15,7 +10,9 @@ export default function WrapperComponent({
   }, []);
   return (
     <div className="main" style={{ width: width, height: height }}>
-      <div className="title">{title}</div>
+      <div className="title">
+        <span>{title}</span>
+      </div>
       <div className="content" ref={main}></div>
     </div>
   );

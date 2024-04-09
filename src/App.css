@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Montserrat:wght@400;500;600&display=swap");
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3.5rem;
+  --header-height: 4rem;
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(230, 62%, 56%);
@@ -14,6 +14,7 @@
   --container-color: hsl(230, 100%, 97%);
   --convert-color: hsl(230, 12%, 8%);
   --hr-color: #7d7d7d4d;
+  --box-shadow-color:hsl(230, 62%, 56%,20%);
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", sans-serif;
@@ -22,7 +23,7 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: 0.938rem;
+  --normal-font-size: 0.900rem;
   --small-font-size: 0.813rem;
   --smaller-font-size: 0.75rem;
 
@@ -120,6 +121,7 @@ body.dark-theme {
   --body-color: hsl(132, 12%, 8%);
   --container-color: hsl(230, 12%, 12%);
   --convert-color: hsl(230, 100%, 96%);
+  --box-shadow-color:hsl(147, 85%, 62%,40%);
 }
 body {
   margin: 0;
