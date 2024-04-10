@@ -1,0 +1,30 @@
+.table {
+    padding-bottom: .2rem;
+    border-radius: .5rem;
+    background-color: var(--white-color);
+    /* 设置背景颜色及透明度 */
+}
+.title_playerRank {
+    height: 1rem;
+    margin: 0.5rem;
+    font-family: var(--body-font);
+    color: var(--title-color);
+    transition: color 0.4s;
+}
+.title_playerRank span {
+    font-size: var(--normal-font-size);
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--title-color);
+}
+.title_playerRank:hover {
+    cursor: pointer;
+}
+.table_playerRank{
+    padding: .5rem;
+}
+.table:hover {
+    box-shadow: var(--box-shadow-color) 0px 8px 24px;
+}
+.table:hover .title_playerRank {
+    color: var(--first-color);
+}

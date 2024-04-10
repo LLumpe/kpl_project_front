@@ -176,11 +176,11 @@ code {
 }
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
-  width: 0.3rem;
+  width: 0.1rem;
   background-color: var(--title-color);
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 0.5rem;
+  border-radius: 0.1rem;
   background-color: var(--text-color);
   transition: all 1s;
 }

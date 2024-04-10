@@ -1,0 +1,94 @@
+.participatedTeam {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  border-radius: 0.5rem;
+  background-color: var(--white-color);
+  /* 设置背景颜色及透明度 */
+  transition: all 0.4s;
+  width: 100%;
+  height: 100%;
+}
+
+.participated_title {
+  height: 1rem;
+  margin: 0.5rem;
+  font-family: var(--body-font);
+  color: var(--title-color);
+  transition: color 0.4s;
+}
+
+.participatedTeam:hover {
+  box-shadow: var(--box-shadow-color) 0px 8px 24px;
+}
+.participatedTeam:hover .participated_title {
+  color: var(--first-color);
+}
+.participated_team {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.participated_title span {
+  font-size: var(--normal-font-size);
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--title-color);
+}
+.participated_title:hover {
+  cursor: pointer;
+}
+.participated_team_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.2rem;
+  border: 1px solid var(--body-color);
+  border-radius: 1rem;
+  transition: all 0.4s;
+}
+.participated_team_item:hover {
+  border: 1px solid var(--title-color);
+  background-color: var(--body-color);
+}
+.participated_team_title {
+  width: 60px;
+  white-space: nowrap; /* 文本不换行 */
+  overflow: hidden; /* 超出部分隐藏 */
+  text-overflow: ellipsis; /* 超出部分以省略号显示 */
+  padding: 5px; /* 为了方便演示添加内边距 */
+}
+.participated_team_title span {
+  text-align: center;
+}
+.participated_team_info {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  border-top: 1px solid var(--body-color);
+}
+.participated_team_left {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.participated_team_right {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+.participated_team_left span {
+  font-size: var(--h3-font-size);
+}
+.participated_team_right_container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+.participated_team_right_KDA {
+  margin: 1rem;
+}

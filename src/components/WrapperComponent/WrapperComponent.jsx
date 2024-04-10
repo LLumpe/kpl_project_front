@@ -7,7 +7,7 @@ export default function WrapperComponent({ option, width, height, title }) {
     const chartDom = main.current;
     const myChart = echarts.init(chartDom);
     myChart.setOption(option);
-  }, []);
+  }, [option]);
   return (
     <div className="main" style={{ width: width, height: height }}>
       <div className="title">

@@ -1,102 +1,103 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
 import WrapperComponent from "../WrapperComponent/WrapperComponent";
-export default function PersonalKill({title}) {
+import gameDataContext from "../../utils/gameDataContext";
+export default function PersonalKill({ title }) {
+  const context = useContext(gameDataContext); //hook接受context内容
+  const [yAxisData, setYAxisData] = useState([]);
+  const [xAxisData, setXAxisData] = useState([]);
+  // console.log("socketDataInfo---->", context?.gameData?.data?.heroData);
+  const reconstructedData = (data) => {
+    const totalKill = {
+      name: "总击杀",
+      type: "line",
+      stack: "Total",
+      areaStyle: {},
+      emphasis: {
+        focus: "series",
+      },
+      data: [],
+    };
+    const totalDeath = {
+      name: "总死亡",
+      type: "line",
+      stack: "Total",
+      areaStyle: {},
+      emphasis: {
+        focus: "series",
+      },
+      data: [],
+    };
+    const totalAssists = {
+      name: "总助攻",
+      type: "line",
+      stack: "Total",
+      areaStyle: {},
+      emphasis: {
+        focus: "series",
+      },
+      data: [],
+    };
+    const xAxisData = [];
+    data?.map((item) => {
+      totalKill.data.push(item.total_kills);
+      totalDeath.data.push(item.total_deaths);
+      totalAssists.data.push(item.total_assists);
+      xAxisData.push(item.teamName);
+    });
+    setXAxisData(xAxisData);
+    setYAxisData([totalKill, totalDeath, totalAssists]);
+  };
+  useEffect(() => {
+    reconstructedData(context?.gameData?.data?.teamData);
+  }, [context]);
   //个人数据的柱状图
   const option = {
     title: {
-      text: 'Stacked Area Chart'
+      text: "Stacked Area Chart",
     },
     tooltip: {
-      trigger: 'axis',
+      trigger: "axis",
       axisPointer: {
-        type: 'cross',
+        type: "cross",
         label: {
-          backgroundColor: '#6a7985'
-        }
-      }
+          backgroundColor: "#6a7985",
+        },
+      },
     },
     legend: {
-      data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+      data: ["总击杀", "总死亡", "总助攻"],
     },
     toolbox: {
       feature: {
-        saveAsImage: {}
-      }
+        saveAsImage: {},
+      },
     },
     grid: {
-      left: '3%',
-      right: '4%',
-      bottom: '3%',
-      containLabel: true
+      left: "3%",
+      right: "4%",
+      bottom: "3%",
+      containLabel: true,
     },
     xAxis: [
       {
-        type: 'category',
+        type: "category",
         boundaryGap: false,
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-      }
+        data: xAxisData,
+      },
     ],
     yAxis: [
       {
-        type: 'value'
-      }
+        type: "value",
+      },
     ],
-    series: [
-      {
-        name: 'Email',
-        type: 'line',
-        stack: 'Total',
-        areaStyle: {},
-        emphasis: {
-          focus: 'series'
-        },
-        data: [120, 132, 101, 134, 90, 230, 210]
-      },
-      {
-        name: 'Union Ads',
-        type: 'line',
-        stack: 'Total',
-        areaStyle: {},
-        emphasis: {
-          focus: 'series'
-        },
-        data: [220, 182, 191, 234, 290, 330, 310]
-      },
-      {
-        name: 'Video Ads',
-        type: 'line',
-        stack: 'Total',
-        areaStyle: {},
-        emphasis: {
-          focus: 'series'
-        },
-        data: [150, 232, 201, 154, 190, 330, 410]
-      },
-      {
-        name: 'Direct',
-        type: 'line',
-        stack: 'Total',
-        areaStyle: {},
-        emphasis: {
-          focus: 'series'
-        },
-        data: [320, 332, 301, 334, 390, 330, 320]
-      },
-      {
-        name: 'Search Engine',
-        type: 'line',
-        stack: 'Total',
-        label: {
-          show: true,
-          position: 'top'
-        },
-        areaStyle: {},
-        emphasis: {
-          focus: 'series'
-        },
-        data: [820, 932, 901, 934, 1290, 1330, 1320]
-      }
-    ]
+    series: yAxisData,
   };
-  return <WrapperComponent option={option} width={'100%'} height={200} title={title}></WrapperComponent>;
+  return (
+    <WrapperComponent
+      option={option}
+      width={"100%"}
+      height={280}
+      title={title}
+    ></WrapperComponent>
+  );
 }

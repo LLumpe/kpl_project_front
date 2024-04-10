@@ -1,35 +1,56 @@
-import React from 'react'
+import React, { useEffect } from "react";
 import WrapperComponent from "../WrapperComponent/WrapperComponent";
-export default function BasicData({title}) {
-    const option = {
-        tooltip: {
-            trigger: 'item',
+import { Image } from "antd";
+import "./main.css";
+export default function BasicData({ title, dataInfo }) {
+  useEffect(() => {
+    console.log(title, dataInfo);
+  }, []);
+  const option = {
+    tooltip: {
+      trigger: "item",
+    },
+    series: [
+      {
+        type: "pie",
+        radius: ["70%", "90%"],
+        color: "#67E0E3",
+        label: {
+          normal: {
+            position: "center",
+          },
         },
-        series: [{
-
-            type: 'pie',
-            radius: ['60%', '70%'],
-            color: '#67E0E3',
+        data: [
+          {
+            value: dataInfo?.value,
+            name: dataInfo?.name,
             label: {
-                normal: {
-                    position: 'center'
-                }
+              normal: {
+                formatter: dataInfo?.name + " \n" + dataInfo?.value + "",
+                textStyle: {
+                  fontSize: 20,
+                  color: "hsl(230, 16%, 45%)",
+                },
+              },
             },
-            data: [{
-                value: 10,
-                name: '插眼',
-                label: {
-                    normal: {
-                        formatter: 10 + '',
-                        textStyle: {
-                            fontSize: 20,   
-                            color: 'var(--text-color)',
-                        }
-                    }
-                }
-            }]
-        }],
-        backgroundColor:"transparent"
-    };
-      return <WrapperComponent option={option} width={195} height={100} title={title}></WrapperComponent>;
+          },
+        ],
+      },
+    ],
+    backgroundColor: "transparent",
+  };
+  return (
+    <div className="basicDataContainer">
+      <WrapperComponent
+        option={option}
+        width={205}
+        height={100}
+        title={title}
+      ></WrapperComponent>
+      {/* <Image
+        src="https://img.scoregg.com/z/2373870/p/219/1616252884226_100X100.png"
+        width={50}
+      ></Image> */}
+    </div>
+  );
 }

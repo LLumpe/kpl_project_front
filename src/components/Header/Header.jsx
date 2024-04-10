@@ -28,7 +28,7 @@ export default function Header() {
           <div className="nav_content_2">
             <a href="#" className="nav__logo">
               <i class="ri-flashlight-fill"></i>
-              王者荣耀KPL数据可视化大屏
+              王者荣耀2023年夏季赛数据可视化
             </a>
           </div>
           <div className="nav_content_3">

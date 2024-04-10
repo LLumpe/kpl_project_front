@@ -1,0 +1,36 @@
+.table {
+    padding-bottom: .2rem;
+    border-radius: .5rem;
+    background-color: var(--white-color);
+    /* 设置背景颜色及透明度 */
+}
+
+.title_heroRank {
+    height: 2rem;
+    margin: .5rem;
+    font-family: var(--body-font);
+    color: var(--title-color);
+    transition: color 0.4s;
+}
+
+.title_heroRank span {
+    font-size: var(--normal-font-size);
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--title-color);
+}
+
+.title_heroRank:hover {
+    cursor: pointer;
+}
+
+.table_heroRank {
+    padding: .5rem;
+}
+
+.table:hover {
+    box-shadow: var(--box-shadow-color) 0px 8px 24px;
+}
+
+.table:hover .title_heroRank {
+    color: var(--first-color);
+}

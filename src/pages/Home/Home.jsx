@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import PersonalData from "../../components/PersonalData/PersonalData";
 import BasicData from "../../components/BasicData/BasicData";
-import TeamRank from "../../components/TeamRank/TeamRank";
+import HeroRank from "../../components/HeroRank/HeroRank";
 import WinLoseData from "../../components/WinLoseData/WinLoseData";
 import Header from "../../components/Header/Header";
 import GameHot from "../../components/GameHot/GameHot";
-import ScrollReveal from "scrollreveal";
-import ChampionData from "../../components/ChampionData/ChampionData";
 import PersonalKill from "../../components/PersonalKill/PersonalKill";
+import PlayerRank from "../../components/PlayerRank/PlayerRank";
+import ParticipatedTeam from "../../components/ParticipatedTeam/ParticipatedTeam";
 import "./main.css";
 export default function Home() {
   const initTheme = () => {
@@ -35,45 +35,72 @@ export default function Home() {
   };
   useEffect(() => {
     initTheme();
-    const sr = ScrollReveal({
-      origin: "top",
-      distance: "60px",
-      duration: 1700,
-      delay: 200,
-    });
-    sr.reveal(".header");
-    sr.reveal(".Home_content", { delay: 1000 });
   });
   return (
     <div className="Home_container">
       <Header></Header>
       <div className="Home_content">
         <div className="Home_content_item">
-          <PersonalData title={"个人数据堆叠图"}></PersonalData>
-          <TeamRank width={600}></TeamRank>
-          <TeamRank width={600}></TeamRank>
+          <PersonalData title={"英雄数据堆叠图"}></PersonalData>
+          <HeroRank
+            width={530}
+            height={430}
+            title={"英雄数据轮播图"}
+          ></HeroRank>
         </div>
         <div className="Home_content_item">
           <div className="Home_content_basicData">
-            <BasicData title={"TES 胜率最高"}></BasicData>
-            <BasicData title={"JDG 击杀最高"}></BasicData>
-            <BasicData title={"SN 插眼最多"}></BasicData>
-            <BasicData title={"V5y4 KDA最高"}></BasicData>
-            <BasicData title={"IGTheShy 死亡最多"}></BasicData>
-            <BasicData title={"TheSknight 击杀最高"}></BasicData>
+            <BasicData
+              title={"KDA最高战队"}
+              dataInfo={{ name: "广州TTG", value: 5.1 }}
+            ></BasicData>
+            <BasicData
+              title={"胜率最高战队"}
+              dataInfo={{ name: "重庆狼队", value: 75 }}
+            ></BasicData>
+            <BasicData
+              title={"得分最高战队"}
+              dataInfo={{ name: "深圳DYG", value: 728 }}
+            ></BasicData>
+            <BasicData
+              title={"助攻平均次数最多选手"}
+              dataInfo={{ name: "帆帆", value: 7.5 }}
+            ></BasicData>
+            <BasicData
+              title={"KDA最高选手"}
+              dataInfo={{ name: "帆帆", value: 12 }}
+            ></BasicData>
+            <BasicData
+              title={"击杀最多选手"}
+              dataInfo={{ name: "小度", value: 6.0 }}
+            ></BasicData>
           </div>
           <WinLoseData title={"战队胜负数据"}></WinLoseData>
-          <PersonalKill title={"个人击杀统计数据"}></PersonalKill>
+          <div className="Home_content_participatedTeam">
+            <PersonalKill title={"战队击杀数据"}></PersonalKill>
+          </div>
         </div>
         <div className="Home_content_item">
           <div className="Home_content_item_gamehot">
             <GameHot title={"比赛热度"} value={112921}></GameHot>
-            <GameHot title={"参赛队伍"} value={23}></GameHot>
-            <GameHot title={"奖池奖金"} value={22500000}></GameHot>
+            <GameHot title={"参赛队伍"} value={18}></GameHot>
+            <GameHot title={"奖池奖金"} value={69000000}></GameHot>
           </div>
-          <TeamRank width={446}></TeamRank>
-          <ChampionData title={"lpl赛季总冠军"}></ChampionData>
-          <div className="Home_content_footer"></div>
+          <PlayerRank
+            width={450}
+            height={400}
+            title={"选手排行榜"}
+          ></PlayerRank>
+          <ParticipatedTeam
+            title={"参赛战队"}
+            width={450}
+            height={480}
+          ></ParticipatedTeam>
+          {/* <ChampionData
+            title={"lpl赛季总冠军"}
+            width={450}
+            height={480}
+          ></ChampionData> */}
         </div>
       </div>
       <div className="Home_background"></div>

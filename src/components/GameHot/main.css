@@ -3,11 +3,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 9rem;    
+    width: 100%; 
     height: 100px;
-    margin-right: .5rem;
     padding: 0px;
     border-radius: .5rem;
     color: var(--title-color);
     background-color: var(--white-color); /* 设置背景颜色及透明度 */
+    transition: all .4s;
+}
+.Gamehot_title{
+    height: 1rem;
+    margin: 0.5rem;
+    font-family: var(--body-font);
+    color: var(--title-color);
+    transition: color 0.4s;
+}
+.Gamehot_title span{
+    font-size: var(--normal-font-size);
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--title-color);
+}
+.GameHot:hover{
+    box-shadow: var(--box-shadow-color) 0px 8px 24px;
+}
+.GameHot:hover .Gamehot_title{
+    color: var(--first-color);
 }

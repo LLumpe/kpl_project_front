@@ -20,12 +20,14 @@
 }
 .Home_content{
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    margin-top: .5rem;
+    box-sizing: border-box;
+    margin: .5rem;
     gap: .5rem;
+    grid-template-columns: 1fr 3fr 1fr;
 }
 .Home_content_item{
     display: flex;
+    /* overflow: hidden; */
     flex-direction: column;
     gap: .5rem;
     /* background-color: var(--white-color);  */
@@ -33,11 +35,30 @@
 .Home_content_basicData{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     gap: .5rem;
+}
+.Home_content_participatedTeam{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    border-radius: 0.5rem;
+    background-color: var(--white-color); /* 设置背景颜色及透明度 */
+    transition: all 0.4s;
+    width: 100%;    
 }
 .Home_content_item_gamehot{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    gap: .5rem;
+    width: 100%;
+    height: 100px;
+ 
     flex-wrap: nowrap;
 }
 .Home_content_footer{

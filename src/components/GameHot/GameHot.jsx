@@ -6,7 +6,9 @@ const formatter = (value) => <CountUp end={value} separator="," />;
 export default function GameHot({ title, value }) {
   return (
     <div className="GameHot">
-      <div className="title">{title}</div>
+      <div className="Gamehot_title">
+        <span>{title}</span>
+      </div>
       <Statistic value={value} precision={2} formatter={formatter} />
     </div>
   );
